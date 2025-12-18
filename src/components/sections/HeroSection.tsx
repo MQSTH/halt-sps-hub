@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Check, ShieldCheck, Droplets } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import productBox from "@/assets/product-box.png";
 
 const HeroSection = () => {
   return (
@@ -73,19 +74,12 @@ const HeroSection = () => {
           {/* Product Image */}
           <AnimatedSection animation="fade-left" delay={200}>
             <div className="relative">
-              <div className="relative bg-accent rounded-3xl p-8 md:p-12">
-                <div className="aspect-square bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl flex items-center justify-center animate-float">
-                  <div className="text-center space-y-4">
-                    <div className="w-32 h-40 md:w-48 md:h-56 bg-primary/20 rounded-xl mx-auto flex items-center justify-center border-2 border-primary/30">
-                      <div className="text-center p-4">
-                        <p className="text-primary font-bold text-lg md:text-2xl">HALT</p>
-                        <p className="text-primary font-bold text-2xl md:text-4xl">SPS</p>
-                        <p className="text-xs md:text-sm text-muted-foreground mt-2">Susu Kambing Bubuk</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-muted-foreground">Box 10 Sachet</p>
-                  </div>
-                </div>
+              <div className="relative rounded-3xl overflow-hidden">
+                <img 
+                  src={productBox} 
+                  alt="Halt SPS Susu Kambing Bubuk Box" 
+                  className="w-full h-auto object-contain animate-float"
+                />
               </div>
               
               {/* Decorative elements */}
