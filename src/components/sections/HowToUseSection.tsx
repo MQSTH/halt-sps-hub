@@ -1,5 +1,6 @@
 import { AlertCircle } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import bgBenefits from "@/assets/bg-benefits.jpg";
 
 const steps = [
   {
@@ -21,8 +22,13 @@ const steps = [
 
 const HowToUseSection = () => {
   return (
-    <section id="cara" className="py-16 md:py-24 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
+    <section id="cara" className="py-16 md:py-24 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+        style={{ backgroundImage: `url(${bgBenefits})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background/90" />
       
       <div className="container relative z-10">
         <div className="max-w-4xl mx-auto">

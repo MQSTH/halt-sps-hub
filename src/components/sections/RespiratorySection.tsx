@@ -1,5 +1,6 @@
 import { Wind, AlertCircle } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import bgRespiratory from "@/assets/bg-respiratory.jpg";
 
 const RespiratorySection = () => {
   const leftColumn = [
@@ -15,7 +16,14 @@ const RespiratorySection = () => {
   ];
 
   return (
-    <section id="pernapasan" className="py-16 md:py-24 relative">
+    <section id="pernapasan" className="py-16 md:py-24 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+        style={{ backgroundImage: `url(${bgRespiratory})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background/90" />
+      
       <div className="container relative z-10">
         <div className="max-w-5xl mx-auto">
           <AnimatedSection>
