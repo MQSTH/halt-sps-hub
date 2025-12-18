@@ -1,5 +1,6 @@
 import { Shield, Wind, Heart, Bone, Zap, Smile } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import bgBenefits from "@/assets/bg-benefits.jpg";
 
 const benefits = [
   {
@@ -36,8 +37,13 @@ const benefits = [
 
 const BenefitsSection = () => {
   return (
-    <section id="manfaat" className="py-16 md:py-24 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-primary/5 pointer-events-none" />
+    <section id="manfaat" className="py-16 md:py-24 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
+        style={{ backgroundImage: `url(${bgBenefits})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/80" />
       
       <div className="container relative z-10">
         <AnimatedSection>

@@ -2,6 +2,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import productBox from "@/assets/product-box.png";
 import productSachet from "@/assets/product-sachet.png";
 import productPouch from "@/assets/product-pouch.png";
+import bgProducts from "@/assets/bg-products.jpg";
 
 const variants = [
   {
@@ -58,8 +59,13 @@ const variants = [
 
 const ProductVariantsSection = () => {
   return (
-    <section id="varian" className="py-16 md:py-24 relative">
-      <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
+    <section id="varian" className="py-16 md:py-24 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+        style={{ backgroundImage: `url(${bgProducts})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background/90" />
       
       <div className="container relative z-10">
         <AnimatedSection>

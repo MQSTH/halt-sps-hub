@@ -2,15 +2,20 @@ import { Button } from "@/components/ui/button";
 import { Check, ShieldCheck, Droplets } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import productBox from "@/assets/product-box.png";
+import bgHero from "@/assets/bg-hero.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen pt-8 pb-16 md:pt-16 md:pb-24 relative overflow-hidden">
-      {/* Background gradient mesh */}
-      <div className="absolute inset-0 bg-gradient-mesh pointer-events-none" />
+    <section className="min-h-screen pt-24 pb-16 md:pt-28 md:pb-24 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${bgHero})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/80" />
       
       {/* Floating orbs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float" />
+      <div className="absolute top-40 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
       
       <div className="container relative z-10">
