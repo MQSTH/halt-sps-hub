@@ -36,8 +36,10 @@ const benefits = [
 
 const BenefitsSection = () => {
   return (
-    <section id="manfaat" className="py-16 md:py-24 bg-secondary">
-      <div className="container">
+    <section id="manfaat" className="py-16 md:py-24 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-primary/5 pointer-events-none" />
+      
+      <div className="container relative z-10">
         <AnimatedSection>
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -52,9 +54,9 @@ const BenefitsSection = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((benefit, i) => (
             <AnimatedSection key={i} delay={i * 100}>
-              <div className="bg-card rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 h-full">
-                <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mb-4">
-                  <benefit.icon className="w-6 h-6 text-primary" />
+              <div className="glass-card rounded-2xl p-6 h-full group">
+                <div className="w-14 h-14 glass rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <benefit.icon className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">{benefit.title}</h3>
                 <p className="text-sm text-muted-foreground">{benefit.description}</p>

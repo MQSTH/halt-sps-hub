@@ -21,8 +21,10 @@ const steps = [
 
 const HowToUseSection = () => {
   return (
-    <section id="cara" className="py-16 md:py-24 bg-secondary">
-      <div className="container">
+    <section id="cara" className="py-16 md:py-24 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
+      
+      <div className="container relative z-10">
         <div className="max-w-4xl mx-auto">
           <AnimatedSection>
             <div className="text-center mb-12">
@@ -38,8 +40,8 @@ const HowToUseSection = () => {
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {steps.map((step, i) => (
               <AnimatedSection key={i} animation="scale" delay={i * 150}>
-                <div className="bg-card rounded-2xl p-6 text-center shadow-sm h-full">
-                  <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                <div className="glass-card rounded-2xl p-6 text-center h-full group">
+                  <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform">
                     {step.number}
                   </div>
                   <h3 className="font-semibold text-foreground mb-2">{step.title}</h3>
@@ -50,7 +52,7 @@ const HowToUseSection = () => {
           </div>
 
           <AnimatedSection delay={450}>
-            <div className="bg-accent rounded-2xl p-6 md:p-8">
+            <div className="glass-card rounded-2xl p-6 md:p-8">
               <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
                 <AlertCircle className="w-5 h-5 text-primary" />
                 Informasi Tambahan

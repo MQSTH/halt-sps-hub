@@ -15,12 +15,12 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <nav className="sticky top-0 z-50 glass-strong border-b border-border/30">
       <div className="container">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-primary">HALT SPS</span>
+            <span className="text-xl font-bold gradient-text">HALT SPS</span>
           </a>
 
           {/* Desktop Nav */}
@@ -34,14 +34,14 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <Button asChild size="sm">
+            <Button asChild size="sm" className="shadow-lg shadow-primary/20">
               <a href="#beli">Beli Sekarang</a>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-foreground"
+            className="md:hidden p-2 text-foreground glass rounded-lg"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -51,7 +51,7 @@ const Navbar = () => {
 
         {/* Mobile Nav */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="md:hidden py-4 border-t border-border/30">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a
@@ -63,7 +63,7 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button asChild size="sm" className="w-full">
+              <Button asChild size="sm" className="w-full shadow-lg shadow-primary/20">
                 <a href="#beli" onClick={() => setIsOpen(false)}>
                   Beli Sekarang
                 </a>

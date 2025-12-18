@@ -1,4 +1,3 @@
-import { Package } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import productBox from "@/assets/product-box.png";
 import productSachet from "@/assets/product-sachet.png";
@@ -59,12 +58,14 @@ const variants = [
 
 const ProductVariantsSection = () => {
   return (
-    <section id="varian" className="py-16 md:py-24 bg-background">
-      <div className="container">
+    <section id="varian" className="py-16 md:py-24 relative">
+      <div className="absolute inset-0 bg-gradient-radial pointer-events-none" />
+      
+      <div className="container relative z-10">
         <AnimatedSection>
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Varian Produk <span className="text-primary">Halt SPS</span>
+              Varian Produk <span className="gradient-text">Halt SPS</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Pilih varian yang paling sesuai dengan kebutuhan dan budget kamu
@@ -76,27 +77,27 @@ const ProductVariantsSection = () => {
           {variants.map((variant, i) => (
             <AnimatedSection key={i} delay={i * 80}>
               <div
-                className={`relative bg-card rounded-2xl overflow-hidden border-2 transition-all duration-300 hover:shadow-lg h-full ${
-                  variant.popular ? "border-primary" : "border-transparent shadow-sm"
+                className={`relative glass-card rounded-2xl overflow-hidden h-full ${
+                  variant.popular ? "ring-2 ring-primary/50" : ""
                 }`}
               >
                 {variant.popular && (
-                  <div className="absolute top-4 left-4 z-10 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
+                  <div className="absolute top-4 left-4 z-10 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full shadow-lg">
                     Populer
                   </div>
                 )}
                 {variant.badge && !variant.popular && (
-                  <div className="absolute top-4 left-4 z-10 bg-accent text-accent-foreground text-xs font-semibold px-3 py-1 rounded-full">
+                  <div className="absolute top-4 left-4 z-10 glass text-foreground text-xs font-semibold px-3 py-1 rounded-full">
                     {variant.badge}
                   </div>
                 )}
 
                 {/* Product Image */}
-                <div className="aspect-square bg-gradient-to-br from-accent to-secondary/50 p-4 flex items-center justify-center">
+                <div className="aspect-square glass-subtle p-4 flex items-center justify-center">
                   <img 
                     src={variant.image} 
                     alt={variant.name}
-                    className="w-full h-full object-contain transition-transform duration-300 hover:scale-105"
+                    className="w-full h-full object-contain transition-transform duration-500 hover:scale-110"
                   />
                 </div>
 
@@ -111,9 +112,9 @@ const ProductVariantsSection = () => {
                     <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Komposisi</span>
                     <p className="text-sm text-foreground">{variant.composition}</p>
                   </div>
-                  <div className="pt-3 border-t border-border">
+                  <div className="pt-3 border-t border-border/30">
                     <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Kisaran Harga</span>
-                    <p className="text-lg font-semibold text-primary">{variant.price}</p>
+                    <p className="text-lg font-semibold gradient-text">{variant.price}</p>
                   </div>
                 </div>
               </div>
