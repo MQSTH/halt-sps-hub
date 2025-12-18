@@ -1,4 +1,5 @@
 import { Shield, Wind, Heart, Bone, Zap, Smile } from "lucide-react";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const benefits = [
   {
@@ -37,27 +38,28 @@ const BenefitsSection = () => {
   return (
     <section id="manfaat" className="py-16 md:py-24 bg-secondary">
       <div className="container">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Manfaat Rutin Minum Susu Kambing
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Berbagai manfaat yang bisa kamu rasakan dengan konsumsi rutin
-          </p>
-        </div>
+        <AnimatedSection>
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Manfaat Rutin Minum Susu Kambing
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Berbagai manfaat yang bisa kamu rasakan dengan konsumsi rutin
+            </p>
+          </div>
+        </AnimatedSection>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((benefit, i) => (
-            <div
-              key={i}
-              className="bg-card rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
-            >
-              <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mb-4">
-                <benefit.icon className="w-6 h-6 text-primary" />
+            <AnimatedSection key={i} delay={i * 100}>
+              <div className="bg-card rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 h-full">
+                <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mb-4">
+                  <benefit.icon className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-semibold text-foreground mb-2">{benefit.title}</h3>
+                <p className="text-sm text-muted-foreground">{benefit.description}</p>
               </div>
-              <h3 className="font-semibold text-foreground mb-2">{benefit.title}</h3>
-              <p className="text-sm text-muted-foreground">{benefit.description}</p>
-            </div>
+            </AnimatedSection>
           ))}
         </div>
       </div>
