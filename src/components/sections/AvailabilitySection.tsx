@@ -18,8 +18,10 @@ const features = [
 
 const AvailabilitySection = () => {
   return (
-    <section className="py-16 md:py-24 bg-secondary">
-      <div className="container">
+    <section className="py-16 md:py-24 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-primary/5 pointer-events-none" />
+      
+      <div className="container relative z-10">
         <div className="max-w-4xl mx-auto">
           <AnimatedSection>
             <div className="text-center mb-12">
@@ -36,8 +38,8 @@ const AvailabilitySection = () => {
           <div className="grid md:grid-cols-3 gap-6">
             {features.map((feature, i) => (
               <AnimatedSection key={i} animation="scale" delay={i * 100}>
-                <div className="bg-card rounded-2xl p-6 text-center shadow-sm h-full">
-                  <div className="w-14 h-14 bg-accent rounded-xl flex items-center justify-center mx-auto mb-4">
+                <div className="glass-card rounded-2xl p-6 text-center h-full group">
+                  <div className="w-14 h-14 glass rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                     <feature.icon className="w-7 h-7 text-primary" />
                   </div>
                   <p className="text-foreground font-medium">{feature.text}</p>

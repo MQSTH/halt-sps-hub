@@ -31,8 +31,10 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="py-16 md:py-24 bg-secondary">
-      <div className="container">
+    <section id="faq" className="py-16 md:py-24 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
+      
+      <div className="container relative z-10">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection>
             <div className="text-center mb-12">
@@ -51,7 +53,7 @@ const FAQSection = () => {
                 <AccordionItem
                   key={i}
                   value={`item-${i}`}
-                  className="bg-card rounded-xl px-6 border-none shadow-sm"
+                  className="glass-card rounded-xl px-6 border-none"
                 >
                   <AccordionTrigger className="text-left font-medium text-foreground hover:no-underline py-5">
                     {faq.question}

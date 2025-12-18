@@ -4,13 +4,13 @@ import AnimatedSection from "@/components/AnimatedSection";
 
 const ContactSection = () => {
   return (
-    <section id="kontak" className="py-16 md:py-24 bg-background">
-      <div className="container">
+    <section id="kontak" className="py-16 md:py-24 relative">
+      <div className="container relative z-10">
         <div className="max-w-2xl mx-auto text-center">
           <AnimatedSection>
-            <div className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-4 py-2 rounded-full mb-6">
-              <Phone className="w-5 h-5" />
-              <span className="text-sm font-medium">Hubungi Kami</span>
+            <div className="inline-flex items-center gap-2 glass-card px-4 py-2 rounded-full mb-6">
+              <Phone className="w-5 h-5 text-primary" />
+              <span className="text-sm font-medium text-foreground">Hubungi Kami</span>
             </div>
 
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -24,11 +24,11 @@ const ContactSection = () => {
           </AnimatedSection>
 
           <AnimatedSection delay={150}>
-            <div className="bg-secondary rounded-2xl p-6 md:p-8 mb-6">
+            <div className="glass-card rounded-2xl p-6 md:p-8 mb-6">
               <p className="text-lg font-semibold text-foreground mb-4">
-                WhatsApp/Telp: <span className="text-primary">0857-1009-2826</span>
+                WhatsApp/Telp: <span className="gradient-text">0857-1009-2826</span>
               </p>
-              <Button asChild variant="whatsapp" size="lg">
+              <Button asChild variant="whatsapp" size="lg" className="shadow-lg">
                 <a href="https://wa.me/6285710092826" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-5 h-5 mr-2" />
                   Chat via WhatsApp
