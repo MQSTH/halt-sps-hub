@@ -1,5 +1,8 @@
 import { Package } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import productBox from "@/assets/product-box.png";
+import productSachet from "@/assets/product-sachet.png";
+import productPouch from "@/assets/product-pouch.png";
 
 const variants = [
   {
@@ -8,6 +11,7 @@ const variants = [
     composition: "Susu kambing bubuk sekitar 20% + gula + krimer nabati + maltodekstrin",
     price: "sekitar Rp37.000–42.500 per box",
     popular: true,
+    image: productBox,
   },
   {
     name: "SPS Regular Pack / Renceng isi 10 Sachet @22g",
@@ -15,6 +19,7 @@ const variants = [
     composition: "Sama seperti varian box",
     price: "sekitar Rp38.000",
     popular: false,
+    image: productSachet,
   },
   {
     name: "Halt SPS Silver-20",
@@ -22,6 +27,7 @@ const variants = [
     composition: "Varian ekonomis dengan kandungan susu kambing bubuk sekitar 20%",
     price: "sekitar Rp35.000–40.000",
     popular: false,
+    image: productPouch,
   },
   {
     name: "Halt SPS Gold-30",
@@ -30,6 +36,7 @@ const variants = [
     price: "sekitar Rp60.000–70.000",
     popular: false,
     badge: "Premium",
+    image: productPouch,
   },
   {
     name: "SPS Regular Pouch 110g / 220g / 440g",
@@ -37,6 +44,7 @@ const variants = [
     composition: "Komposisi sama seperti Regular",
     price: "±Rp20.000, Rp30.000, Rp60.000",
     popular: false,
+    image: productPouch,
   },
   {
     name: "SPS Coklat Pouch 250g",
@@ -45,6 +53,7 @@ const variants = [
     price: "sekitar Rp40.000",
     popular: false,
     badge: "Rasa Coklat",
+    image: productPouch,
   },
 ];
 
@@ -67,29 +76,33 @@ const ProductVariantsSection = () => {
           {variants.map((variant, i) => (
             <AnimatedSection key={i} delay={i * 80}>
               <div
-                className={`relative bg-card rounded-2xl p-6 border-2 transition-all duration-300 hover:shadow-lg h-full ${
+                className={`relative bg-card rounded-2xl overflow-hidden border-2 transition-all duration-300 hover:shadow-lg h-full ${
                   variant.popular ? "border-primary" : "border-transparent shadow-sm"
                 }`}
               >
                 {variant.popular && (
-                  <div className="absolute -top-3 left-6 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
+                  <div className="absolute top-4 left-4 z-10 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
                     Populer
                   </div>
                 )}
                 {variant.badge && !variant.popular && (
-                  <div className="absolute -top-3 left-6 bg-accent text-accent-foreground text-xs font-semibold px-3 py-1 rounded-full">
+                  <div className="absolute top-4 left-4 z-10 bg-accent text-accent-foreground text-xs font-semibold px-3 py-1 rounded-full">
                     {variant.badge}
                   </div>
                 )}
 
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Package className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold text-foreground leading-tight">{variant.name}</h3>
+                {/* Product Image */}
+                <div className="aspect-square bg-gradient-to-br from-accent to-secondary/50 p-4 flex items-center justify-center">
+                  <img 
+                    src={variant.image} 
+                    alt={variant.name}
+                    className="w-full h-full object-contain transition-transform duration-300 hover:scale-105"
+                  />
                 </div>
 
-                <div className="space-y-3">
+                <div className="p-6 space-y-3">
+                  <h3 className="font-semibold text-foreground leading-tight">{variant.name}</h3>
+                  
                   <div>
                     <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Isi</span>
                     <p className="text-sm text-foreground">{variant.content}</p>
