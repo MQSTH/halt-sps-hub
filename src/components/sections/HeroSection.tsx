@@ -12,7 +12,8 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${bgHero})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/80" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-transparent to-background/50" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
       
       {/* Floating orbs */}
       <div className="absolute top-40 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float" />
