@@ -62,10 +62,11 @@ const ProductVariantsSection = () => {
     <section id="varian" className="py-16 md:py-24 relative overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${bgProducts})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background/90" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/30 to-background/50" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-background/40" />
       
       <div className="container relative z-10">
         <AnimatedSection>
